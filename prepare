@@ -59,6 +59,8 @@ $verbose = 1;
 EOF
 echo "$SBUILD_CONF" >> "$HOME/.sbuildrc"
 
+sudo sed -i "s/DISABLE_NETWORK.*/DISABLE_NETWORK => 0,/" /usr/share/perl5/Sbuild/Build.pm
+
 test -z "$REPOS_FILE" -a ! -f sources.repos && exit
 REPOS_FILE="${REPOS_FILE:-sources.repos}"
 
