@@ -72,6 +72,7 @@ runs:
         SKIP_ROS_REPOSITORY: ${{ inputs.SKIP_ROS_REPOSITORY }}
         SKIP_PACKAGES: ${{ inputs.SKIP_PACKAGES }}
     - name: Create apt repository and deploy it
+      if: always()
       working-directory: ${{ inputs.WORKING_DIRECTORY }}
       run: $GITHUB_ACTION_PATH/repository
       shell: sh
