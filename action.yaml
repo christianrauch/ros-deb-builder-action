@@ -54,7 +54,6 @@ runs:
         path: /home/runner/.cache/ccache
         key: ccache-${{ inputs.DEB_DISTRO }}-${{ inputs.ROS_DISTRO }}
     - name: Setup build environment
-      working-directory: ${{ inputs.WORKING_DIRECTORY }}
       run: $GITHUB_ACTION_PATH/prepare
       shell: sh
       env:
