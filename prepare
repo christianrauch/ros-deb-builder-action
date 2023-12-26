@@ -41,7 +41,7 @@ echo "Setup build environment"
 mkdir -p "$HOME/.cache/sbuild"
 mmdebstrap --variant=buildd --include=apt,ccache,ca-certificates \
   --customize-hook='chroot "$1" update-ccache-symlinks' \
-  --components=main,universe "$DEB_DISTRO" "$HOME/.cache/sbuild/$DEB_DISTRO-amd64.tar"
+  --components=main,universe,multiverse,restricted "$DEB_DISTRO" "$HOME/.cache/sbuild/$DEB_DISTRO-amd64.tar"
 
 ccache --zero-stats --max-size=10.0G
 
